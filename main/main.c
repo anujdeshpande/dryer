@@ -30,8 +30,7 @@ int _dryer_speed;
 static int console_dryer(int argc, char **argv)
 {
   ESP_LOGI(TAG,"Current speed is %d",_dryer_speed);
-
-  new_speed = atoi(argv[1]);
+  /* new_speed = atoi(argv[1]); */
   ESP_ERROR_CHECK(ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, _dryer_speed));
   ESP_ERROR_CHECK(ledc_update_duty(LEDC_MODE, LEDC_CHANNEL));
   return 0;
